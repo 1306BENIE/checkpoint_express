@@ -1,8 +1,10 @@
-<%= include('layout', { title: "Nous Contacter", "}) %>
-<%- body %>
- 
-
-
-
-
-
+<!-- views/contact.ejs -->
+<%- include('layout', { body: `
+    <h1>Contactez-nous</h1>
+    <form action="/contact" method="POST">
+        <input type="text" name="name" placeholder="Votre nom" required>
+        <input type="email" name="email" placeholder="Votre email" required>
+        <textarea name="message" placeholder="Votre message" required></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+` }) %>

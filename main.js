@@ -1,52 +1,25 @@
+// server.js
 const express = require('express');
+const path = require('path');
+const { workingHoursMiddleware } = require('./middlewares/workingHours');
+const routes = require('./routes/portfolioRouter');
+
 const app = express();
 
-// Middleware pour vérifier les heures de travail
-const workingHoursMiddleware = (req, res, next) => {
-    const now = new Date();
-    const day = now.getDay(); 
-    const hour = now.getHours();
-
-    if (day >= 1 && day <= 5 && hour >= 9 && hour <= 22) {
-        next();
-    } else {
-        res.send('<h1>Le site est fermé ! Revenez entre 9h et 17h, du lundi au vendredi.</h1>');
-    }
-};
-
-// Configurer le moteur de template
+// Configuration du moteur de template
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 // Middleware pour servir les fichiers statiques (CSS, images, etc.)
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: false }));
 
-// Appliquer le middleware des horaires à toutes les routes
+// Appliquer le middleware des horaires sur toutes les routes
 app.use(workingHoursMiddleware);
 
-// Routes
-app.get('/', (req, res) => {
-    res.render('home', { 
-        title: "Accueil", 
-        body: `<h1>Bienvenue sur notre site !</h1>
-               <p>Nous sommes heureux de vous accueillir.</p>` 
-    });
-});
-
-
-app.get('/services', (req, res) =>{
-    res.render('services', { 
-        title: "Nos Services",
-        body:   `<h1>Nos services</h1>
-                <p>Nous offrons des services de qualité.</p>`
-    })
-});
-app.get('/contact', (req, res) => {
-    res.render('contact', {
-        title: "Contactez-nous",
-        body:   `<h1>Contactez-nous</h1>
-                <p>Pour toute question ou demande, n'hésitez pas à nous contacter.</p>`
-    })
-});
+// Utilisation des routes
+app.use('/', routes);
 
 // Démarrer le serveur
-app.listen(3000, () => console.log('Serveur en ligne sur http://localhost:3000'));
+const PORT = 3000;
+app.listen(PORT, () => console.log(`Serveur en ligne sur http://localhost:${PORT}`));

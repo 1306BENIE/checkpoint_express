@@ -1,3 +1,4 @@
+<!-- views/layout.ejs -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,13 +8,12 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <nav>
-        <a href="/">Accueil</a>
-        <a href="/services">Nos Services</a>
-        <a href="/contact">Nous Contacter</a>
-    </nav>
+    <%- include('header') %> 
+    
     <div class="container">
-        <%= body %>
+        <%- body %> 
     </div>
+
+    <%- include('footer') %> 
 </body>
 </html>
