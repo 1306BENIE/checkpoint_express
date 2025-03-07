@@ -1,5 +1,14 @@
 <!-- views/home.ejs -->
 <%- include('layout', { body: `
-    <h1>Bienvenue sur Mon Entreprise</h1>
-    <p>Nous sommes spécialisés dans la transformation digitale et l'innovation technologique.</p>
+    <div class="row">
+      <div class="col-2">
+        <h1>Donnez à votre entrainement un nouveau style !</h1>
+        <p>Le succès n'est pas toujours une question de grandeur.</p>
+        <a href="/Services" class="btn">Voir nos services</a>
+      </div>
+      <div class="col-2">
+        <img src="../image/image1.png" alt="Landing images">
+      </div>
+    </div>
+    
 ` }) %>

@@ -1,96 +1,75 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
+*{
+  font-family: Arial, Helvetica, sans-serif;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-header {
+.logo {
+  color: #FFF;
+}
+
+.navbar{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #007bff;
-  color: black;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold; 
-}
-#logo {
-  width: 150px;
-  height: auto;
-  color: #f4f4f4;
-}
-nav {
-  /* display: flex;
-  justify-content: center;
-  background: #0056b3;
-  padding: 10px; */
+  padding: 28px;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 18px;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-.container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  text-align: center;
-}
-
-h1 {
-  color: #007bff;
-}
-
-form {
+nav ul {
   display: flex;
-  flex-direction: column;
+  list-style-type: none;
+} 
+
+nav ul li {
+  margin-right: 48px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 24px;
+  font-weight: bold;
+}
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+  background-color: rgb(53, 113, 234);
+}
+
+.row {
+  display: flex;
   align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-form input, form textarea {
+.col-2 {
+  flex-basis: 50%;
+  min-width: 300px;
+}
+
+.col-2 img {
   width: 100%;
-  max-width: 500px;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 30px 0;
 }
 
-button, .btn {
-  background: #007bff;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+.col-2 h1{
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.btn {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  background-color: #3498db;
+  color: #fff;
+  padding: 16px 32px;
   text-decoration: none;
   display: inline-block;
-  text-align: center;
-}
-
-button:hover, .btn:hover {
-  background: #0056b3;
-}
-
-.error-messages {
-  list-style: none;
-  padding: 10px;
-  background-color: #ffdddd;
-  color: #d8000c;
-  border: 1px solid #d8000c;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
 }
