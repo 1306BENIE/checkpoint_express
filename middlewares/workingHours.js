@@ -4,7 +4,7 @@ const workingHoursMiddleware = (req, res, next) => {
   const day = now.getDay();
   const hour = now.getHours();
 
-  if (day >= 1 && day <= 5 && hour >= 0 && hour <= 19) {
+  if (day >= 1 && day <= 8 && hour >= 0 && hour <= 19) {
       next();
   } else {
       res.send('<h1>Le site est fermé ! Revenez entre 9h et 17h, du lundi au vendredi.</h1>');

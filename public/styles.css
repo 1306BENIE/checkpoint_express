@@ -60,9 +60,12 @@ nav ul li a {
   font-weight: bold;
 }
 
+.col-2 p{
+  margin-top: 20px;
+}
+
 .btn {
-  font-family: Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
+  font-family: Arial;
   background-color: #3498db;
   color: #fff;
   padding: 16px 32px;
@@ -70,6 +73,7 @@ nav ul li a {
   display: inline-block;
   font-size: 18px;
   font-weight: bold;
-  margin: 4px 2px;
-  cursor: pointer;
+  margin-top: 25px;
+  border-radius: 30px;
+  padding: 10px 30px;
 }
