@@ -1,15 +1,21 @@
-*{
-  font-family: Arial, Helvetica, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-.logo {
-  color: #FFF;
+body {
+  background: radial-gradient(#fff, #eaf2fb);
+  font-family: "Poppins", sans-serif;
 }
 
-.navbar{
+.logo {
+  color: #000;
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +25,7 @@
 nav ul {
   display: flex;
   list-style-type: none;
-} 
+}
 
 nav ul li {
   margin-right: 48px;
@@ -27,15 +33,14 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #FFF;
+  color: #000;
   font-size: 24px;
   font-weight: bold;
 }
-.container{
+.container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 28px;
-  background-color: rgb(53, 113, 234);
 }
 
 .row {
@@ -55,18 +60,17 @@ nav ul li a {
   padding: 30px 0;
 }
 
-.col-2 h1{
+.col-2 h1 {
   font-size: 36px;
   font-weight: bold;
 }
 
-.col-2 p{
+.col-2 p {
   margin-top: 20px;
 }
 
 .btn {
-  font-family: Arial;
-  background-color: #3498db;
+  background-color: #16a7ba;
   color: #fff;
   padding: 16px 32px;
   text-decoration: none;
@@ -76,4 +80,119 @@ nav ul li a {
   margin-top: 25px;
   border-radius: 30px;
   padding: 10px 30px;
+  transition: 0.7s;
+}
+
+.btn:hover {
+  background-color: #106e77;
+}
+
+/* style de la section categorie */
+.categorie h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 48px;
+}
+
+.col-3 {
+  flex-basis: 30%;
+  min-width: 300px;
+  margin: auto;
+}
+
+.col-3 img {
+  width: 100%;
+  margin-top: 58px;
+}
+
+/* Sections des meilleur produits */
+.featured-products h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 48px 0;
+}
+
+.col-4 {
+  flex-basis: 24%;
+  min-width: 200px;
+  margin: auto;
+  transition: transform 0.4s;
+}
+
+.col-4 img {
+  width: 100%;
+}
+
+.col-4:hover {
+  transform: translateY(-10px);
+}
+
+/* style du formullaire de contact */
+
+.contact-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-contact {
+  position: relative;
+  min-width: 1200px;
+  min-height: 550px;
+  display: flex;
+  z-index: 1000;
+}
+
+.container-contact .contact-info {
+  position: absolute;
+  top: 40px;
+  width: 480px;
+  height: calc(100% - 80px);
+  background-color: rgb(65, 165, 42);
+  z-index: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.contact-info h2 {
+
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.contact-info .info {
+  position: relative;
+  margin: 20px 0;
+}
+
+.contact-info .info li {
+  position: relative;
+  list-style-type: none;
+  display: flex;
+  margin: 70px 0;
+  cursor: pointer;
+  align-items: center;
+}
+
+.info .fas {
+  color: white;
+  margin-right: 18px;
+  font-size: 30px;
+}
+
+.container-contact .contact-form {
+  position: absolute;
+  padding: 70px 50px;
+  padding-left: 250px;
+  z-index: 1;
+  margin-left: 420px;
+  width: calc(100% - 420px);
+  height: 100%;
+  background: #fff;
+  box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.25);
 }
